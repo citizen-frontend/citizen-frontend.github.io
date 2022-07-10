@@ -30,7 +30,25 @@
           .register("/serviceWorker.js")
           .then(res => console.log("service worker registered"))
           .catch(err => console.log("service worker not registered", err));
-        })
+        });
+
+        let deferredPrompt;
+
+        window.addEventListener("DOMContentLoaded", async event => {
+          installApp();
+        });
+
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+        });
+
+        async function installApp() {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+          }
+        }
       }
     </script>
   </body>
