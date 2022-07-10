@@ -17,8 +17,8 @@
     <link rel="apple-touch-icon" href="images/munihuaura.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#fff" />
     <meta name="theme-color" content="#fff" />
-    <script type="module" crossorigin src="/assets/index.513db708.js"></script>
-    <link rel="stylesheet" href="/assets/index.a660ee64.css">
+    <script type="module" crossorigin src="/assets/index.4928b364.js"></script>
+    <link rel="stylesheet" href="/assets/index.57802722.css">
   </head>
   <body>
     <div id="app"></div>
@@ -31,24 +31,6 @@
           .then(res => console.log("service worker registered"))
           .catch(err => console.log("service worker not registered", err));
         });
-
-        let deferredPrompt;
-
-        window.addEventListener("DOMContentLoaded", async event => {
-          installApp();
-        });
-
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-          e.preventDefault();
-          deferredPrompt = e;
-        });
-
-        async function installApp() {
-          if (deferredPrompt) {
-            deferredPrompt.prompt();
-          }
-        }
       }
     </script>
   </body>
