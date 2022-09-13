@@ -1,1 +1,0 @@
-const c="userStoredDocId",r="RegisteredUsers",S="session-user",I="IncidentTypes",a="Incidents";var E=(s,e)=>{const t=s.__vccOpts||s;for(const[o,n]of e)t[o]=n;return t};export{I,r as R,S,c as U,E as _,a};
